@@ -1,0 +1,35 @@
+let nfts = [];
+
+
+function mintNFT(name, creator, description, image) {
+    const nft = {
+        name: name,
+        creator: creator,
+        description: description,
+        image: image
+    };
+    nfts.push(nft);
+}
+
+
+function listNFTs() {
+    nfts.forEach((nft, index) => {
+        console.log(`NFT #${index + 1}`);
+        console.log(`Name: ${nft.name}`);
+        console.log(`Creator: ${nft.creator}`);
+        console.log(`Description: ${nft.description}`);
+        console.log(`Image: ${nft.image}`);
+        console.log('-------------------------');
+    });
+}
+
+function getTotalSupply() {
+    console.log(`Total Supply: ${nfts.length}`);
+}
+
+mintNFT("CryptoPunk #1", "Artist1", "A unique CryptoPunk", "image1.png");
+mintNFT("CryptoPunk #2", "Artist2", "Another unique CryptoPunk", "image2.png");
+mintNFT("CryptoKitty #1", "Artist3", "A cute CryptoKitty", "image3.png");
+
+listNFTs();
+getTotalSupply();
